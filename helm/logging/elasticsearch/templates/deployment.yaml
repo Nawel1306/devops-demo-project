@@ -20,6 +20,15 @@ spec:
           env:
             - name: discovery.type
               value: single-node
+            - name: ES_JAVA_OPTS
+              value: -Xms512m -Xmx512m
+          resources:
+            limits:
+              cpu: 1
+              memory: 2Gi
+            requests:
+              cpu: 500m
+              memory: 1Gi
           image: {{ .Values.image.repository }}:{{ .Values.image.tag }}
           readinessProbe:
             exec:
