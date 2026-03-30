@@ -68,11 +68,11 @@ ingress:
   # lines, adjust them as necessary, and remove the curly braces after 'resources:'.
 resources:	
 	limits:
-     cpu: "1"
-     memory: "2Gi"
+     cpu: 1
+     memory: 2Gi
    requests:
-     cpu: "500m"
-     memory: "1Gi"
+     cpu: 500m
+     memory: 1Gi
 
 livenessProbe:
   httpGet:
@@ -111,4 +111,4 @@ affinity: {}
 
 extraEnvs: 
 	- name: ES_JAVA_OPTS
-	  value: "-Xms512m -Xmx512m"
+	  value: -Xms512m -Xmx512m
